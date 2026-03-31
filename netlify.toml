@@ -1,0 +1,12 @@
+[build]
+  command = "hugo --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.152.2"
+
+[[redirects]]
+  from = "www.newthink.ai"
+  to = "https://newthink.ai"
+  status = 301
+  force = true

@@ -1,0 +1,44 @@
+baseURL = "https://newthink.ai/"
+languageCode = "en-US"
+title = "New Think"
+theme = "blowfish"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  colorScheme = "ocean"
+  defaultAppearance = "dark"
+  autoSwitchAppearance = true
+  enableSearch = true
+  enableCodeCopy = true
+
+  [params.homepage]
+    layout = "hero"
+    homepageImage = ""
+    showRecent = true
+    showRecentItems = 5
+
+  [params.article]
+    showDate = true
+    showReadingTime = true
+    showTableOfContents = false
+
+  [params.author]
+    name = "New Think"
+    headline = "AI for everything. Think differently."
+    bio = "Real-world AI use cases across everyday and professional problems."
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "posts"
+    weight = 10
+  [[menu.main]]
+    name = "About"
+    pageRef = "about"
+    weight = 20
+  [[menu.main]]
+    name = "Contact"
+    pageRef = "contact"
+    weight = 30
