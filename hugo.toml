@@ -8,6 +8,8 @@ theme = "hugo-theme-stack"
 
 [params]
   mainSections = ["posts"]
+  description = "Real-world AI use cases across everyday and professional problems."
+  scheduleUrl = "#"  # Replace with your Calendly or scheduling link
 
   [params.sidebar]
     subtitle = "AI for everything. Think differently."
@@ -29,6 +31,10 @@ theme = "hugo-theme-stack"
     name = "Articles"
     url = "/posts"
     weight = 10
+  [[menu.main]]
+    name = "Topics"
+    url = "/topics"
+    weight = 15
   [[menu.main]]
     name = "About"
     url = "/about"

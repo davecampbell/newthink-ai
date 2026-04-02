@@ -1,0 +1,15 @@
+{{ $page := . }}
+<a href="{{ $page.RelPermalink }}" class="nt-article-card">
+    {{ with $page.Params.image }}
+    <div class="nt-thumb">
+        <img src="{{ . }}" alt="{{ $page.Title }}" loading="lazy">
+    </div>
+    {{ else }}
+    <div class="nt-thumb nt-thumb-placeholder"></div>
+    {{ end }}
+    <div class="nt-card-body">
+        <h3>{{ $page.Title }}</h3>
+        {{ with $page.Description }}<p>{{ . }}</p>{{ end }}
+        <span class="nt-date">{{ $page.Date.Format "Jan 2, 2006" }}</span>
+    </div>
+</a>

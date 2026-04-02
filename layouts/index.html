@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">New Think</a>
+        <ul class="nav-links">
+            <li><a href="/posts/">Articles</a></li>
+            <li><a href="/topics/">Topics</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="{{ .Site.Params.scheduleUrl | default "#schedule" }}" class="nav-cta">Schedule a Call</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>{{ .Site.Params.hero.headline | default "AI for everything.<br>Think differently." | safeHTML }}</h1>
+        <p class="hero-sub">{{ .Site.Params.hero.subheadline | default "Real-world AI use cases across everyday and professional problems — from the practical to the surprising." }}</p>
+        <div class="hero-actions">
+            <a href="/posts/" class="btn btn-primary">Read Articles</a>
+            <a href="{{ .Site.Params.scheduleUrl | default "#schedule" }}" class="btn btn-outline">Schedule a Call</a>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT IS NEW THINK -->
+<section class="what section">
+    <div class="container">
+        <div class="what-inner">
+            <div class="what-text">
+                <h2>What is New Think?</h2>
+                <p>{{ .Site.Params.what.body | default "New Think is a consulting and ideas brand built around one belief: AI can solve almost anything — if you approach the problem differently. We document real cases across business, health, creativity, research, and daily life to show what's actually possible right now." }}</p>
+            </div>
+            <div class="what-stat">
+                <div class="stat-box">
+                    <span class="stat-icon">🧠</span>
+                    <span class="stat-label">Think differently.<br>Act smarter.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- USE CASE CARDS -->
+<section class="usecases section section-alt">
+    <div class="container">
+        <h2 class="section-title">AI Works Here</h2>
+        <p class="section-sub">A few of the domains where new thinking unlocks real results.</p>
+        <div class="cards-grid">
+            {{ range .Site.Params.usecases }}
+            <div class="card">
+                <div class="card-icon">{{ .icon }}</div>
+                <h3>{{ .title }}</h3>
+                <p>{{ .description }}</p>
+            </div>
+            {{ else }}
+            <div class="card"><div class="card-icon">💼</div><h3>Business</h3><p>Strategy, operations, communication, and competitive research — all accelerated.</p></div>
+            <div class="card"><div class="card-icon">🏥</div><h3>Health</h3><p>From researching diagnoses to navigating insurance — AI as a patient advocate.</p></div>
+            <div class="card"><div class="card-icon">✍️</div><h3>Creative</h3><p>Writing, design, music, and content creation reimagined from the first step.</p></div>
+            <div class="card"><div class="card-icon">🔬</div><h3>Research</h3><p>Literature reviews, data analysis, and synthesis that used to take weeks.</p></div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- RECENT ARTICLES -->
+<section class="recent section">
+    <div class="container">
+        <h2 class="section-title">Recent Articles</h2>
+        <div class="article-cards">
+            {{ $posts := where .Site.RegularPages "Section" "posts" }}
+            {{ range first 3 $posts }}
+            <a href="{{ .RelPermalink }}" class="article-card">
+                {{ with .Params.image }}
+                <div class="article-thumb">
+                    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                </div>
+                {{ else }}
+                <div class="article-thumb article-thumb-placeholder"></div>
+                {{ end }}
+                <div class="article-card-body">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Description }}</p>
+                    <span class="article-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        <div class="section-cta">
+            <a href="/posts/" class="btn btn-outline">All Articles →</a>
+        </div>
+    </div>
+</section>
+
+<!-- SCHEDULE A CALL -->
+<section id="schedule" class="schedule section section-alt">
+    <div class="container schedule-inner">
+        <div>
+            <h2>{{ .Site.Params.schedule.headline | default "Let's talk about your problem." }}</h2>
+            <p>{{ .Site.Params.schedule.subheadline | default "Whether you're curious about AI for a specific challenge or ready to get to work — a 30-minute call is the fastest way to find out what's possible." }}</p>
+        </div>
+        <a href="{{ .Site.Params.scheduleUrl | default "#" }}" class="btn btn-primary btn-large">{{ .Site.Params.schedule.buttonText | default "Schedule a Free Call" }}</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>© {{ now.Year }} New Think. All rights reserved.</span>
+        <ul class="footer-links">
+            <li><a href="/posts/">Articles</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('open');
+    });
+});
+</script>
+
+</body>
+</html>

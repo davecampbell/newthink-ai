@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="topic-page">
+
+    <div class="topic-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="topic-desc">{{ . }}</p>{{ end }}
+    </div>
+
+    {{ with .Content }}
+    <div class="topic-content">{{ . }}</div>
+    {{ end }}
+
+    {{ $tag := .Params.filterTag }}
+    {{ $posts := where site.RegularPages "Section" "posts" }}
+    {{ $filtered := where $posts ".Params.tags" "intersect" (slice $tag) }}
+
+    {{ if $filtered }}
+    <div class="topic-articles">
+        <h2>Articles</h2>
+        <div class="nt-article-grid">
+            {{ range $filtered }}
+                {{ partial "article-card.html" . }}
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+</div>
+{{ end }}
