@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} — {{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+{{ partial "site-nav.html" . }}
+
+<main class="page-main">
+    <div class="container">
+
+        {{ if .Params.tags }}
+        <div class="article-meta-top">
+            {{ range .Params.tags }}
+            <a href="/tags/{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <h1 class="page-title">{{ .Title }}</h1>
+
+        {{ if .Date }}
+        <div class="article-meta">
+            <span>{{ .Date.Format "January 2, 2006" }}</span>
+            {{ if .ReadingTime }}<span>· {{ .ReadingTime }} min read</span>{{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .Params.image }}
+        <div class="article-hero-image">
+            <img src="{{ . }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+
+        <div class="article-body">
+            {{ .Content }}
+        </div>
+
+        {{ if .Params.tags }}
+        <div class="article-tags-footer">
+            {{ range .Params.tags }}
+            <a href="/tags/{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="article-nav-links">
+            <a href="/posts/" class="btn btn-outline">← All Articles</a>
+        </div>
+
+    </div>
+</main>
+
+{{ partial "site-footer.html" . }}
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} — {{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+{{ partial "site-nav.html" . }}
+
+<main class="page-main">
+    <div class="container">
+
+        <div class="list-header">
+            <h1 class="page-title">{{ .Title }}</h1>
+            {{ with .Description }}<p class="list-desc">{{ . }}</p>{{ end }}
+        </div>
+
+        {{ if .Pages }}
+        <div class="article-cards list-cards">
+            {{ range .Pages }}
+            <a href="{{ .RelPermalink }}" class="article-card">
+                {{ with .Params.image }}
+                <div class="article-thumb">
+                    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                </div>
+                {{ else }}
+                <div class="article-thumb article-thumb-placeholder"></div>
+                {{ end }}
+                <div class="article-card-body">
+                    <h3>{{ .Title }}</h3>
+                    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+                    <span class="article-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        {{ else }}
+        <p class="list-empty">No articles yet — check back soon.</p>
+        {{ end }}
+
+    </div>
+</main>
+
+{{ partial "site-footer.html" . }}
+
+</body>
+</html>

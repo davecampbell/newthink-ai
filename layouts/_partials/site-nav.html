@@ -1,0 +1,13 @@
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">New Think</a>
+        <ul class="nav-links">
+            <li><a href="/posts/">Articles</a></li>
+            <li><a href="/topics/">Topics</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="{{ .Site.Params.scheduleUrl | default "#schedule" }}" class="nav-cta">Schedule a Call</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    </div>
+</nav>

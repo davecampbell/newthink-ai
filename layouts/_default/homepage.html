@@ -9,20 +9,7 @@
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="/" class="nav-logo">New Think</a>
-        <ul class="nav-links">
-            <li><a href="/posts/">Articles</a></li>
-            <li><a href="/topics/">Topics</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
-            <li><a href="{{ .Site.Params.scheduleUrl | default "#schedule" }}" class="nav-cta">Schedule a Call</a></li>
-        </ul>
-        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    </div>
-</nav>
+{{ partial "site-nav.html" . }}
 
 <!-- HERO -->
 <section class="hero">
@@ -117,24 +104,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-    <div class="container footer-inner">
-        <span>© {{ now.Year }} New Think. All rights reserved.</span>
-        <ul class="footer-links">
-            <li><a href="/posts/">Articles</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
-        </ul>
-    </div>
-</footer>
-
-<script>
-document.querySelectorAll('.nav-links a').forEach(function(link) {
-    link.addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.remove('open');
-    });
-});
-</script>
+{{ partial "site-footer.html" . }}
 
 </body>
 </html>
