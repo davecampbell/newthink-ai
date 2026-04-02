@@ -1,4 +1,4 @@
 ---
-title: "Blog"
-description: "Real-world AI use cases"
+title: "Articles"
+description: "Examples of using AI tools for basically anything."
 ---
