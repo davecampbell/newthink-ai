@@ -22,4 +22,6 @@ two
 ![[claude-website.png]]
 
 below the image
+next image:
 
+![[IMG_6234.jpg]]

@@ -33,7 +33,12 @@
 
         {{ with .Params.image }}
         <div class="article-hero-image">
+            {{ $res := $.Resources.GetMatch . }}
+            {{ if $res }}
+            <img src="{{ $res.RelPermalink }}" alt="{{ $.Title }}">
+            {{ else }}
             <img src="{{ . }}" alt="{{ $.Title }}">
+            {{ end }}
         </div>
         {{ end }}
 

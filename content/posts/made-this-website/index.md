@@ -6,7 +6,7 @@ description: Claude helped develop an entire system for doing this website
 tags:
   - websites
   - communications
-image: /images/claude-website.png
+image: claude-website.png
 ---
 I know 'creating a website' is something that AI tools have been able to do from the very start - kind of a canonical example of what AI can do for any organization.
 
@@ -17,4 +17,4 @@ I had been using Hugo to create static sites and was fairly impressed with the H
 So I challenged Claude to help me do a Hugo / Obsidian mashup - pretty straight Hugo for the core site look and feel, but the ease of Obsidian to create articles.
 
 
-![](/images/claude-website%201.png)
+![](claude-website 1.png)

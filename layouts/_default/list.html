@@ -23,13 +23,7 @@
         <div class="article-cards list-cards">
             {{ range .Pages }}
             <a href="{{ .RelPermalink }}" class="article-card">
-                {{ with .Params.image }}
-                <div class="article-thumb">
-                    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
-                </div>
-                {{ else }}
-                <div class="article-thumb article-thumb-placeholder"></div>
-                {{ end }}
+                {{ partial "post-image.html" (dict "Page" . "Class" "article-thumb") }}
                 <div class="article-card-body">
                     <h3>{{ .Title }}</h3>
                     {{ with .Description }}<p>{{ . }}</p>{{ end }}

@@ -1,0 +1,22 @@
+{{/*
+  Resolves a post image from either:
+  - A page bundle resource (e.g. image: myimage.jpg)
+  - A static path (e.g. image: /images/myimage.jpg)
+  Usage: {{ partial "post-image.html" (dict "Page" . "Class" "article-thumb") }}
+*/}}
+{{ $src := "" }}
+{{ with .Page.Params.image }}
+    {{ $res := $.Page.Resources.GetMatch . }}
+    {{ if $res }}
+        {{ $src = $res.RelPermalink }}
+    {{ else }}
+        {{ $src = . }}
+    {{ end }}
+{{ end }}
+{{ with $src }}
+<div class="{{ $.Class }}">
+    <img src="{{ . }}" alt="{{ $.Page.Title }}" loading="lazy">
+</div>
+{{ else }}
+<div class="{{ $.Class }} article-thumb-placeholder"></div>
+{{ end }}
