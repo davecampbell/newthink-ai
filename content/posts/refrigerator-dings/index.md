@@ -5,7 +5,7 @@ description: After sitting in a local warehouse for 8 months...
 tags:
   - malarkey
   - baloney
-image: IMG_6234.png
+image: IMG_6234.jpg
 draft:
 ---
 We got a new refrigerator
