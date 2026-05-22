@@ -3,7 +3,7 @@ title: "What to Automate — and What to Leave Alone"
 date: 2026-05-21
 draft: false
 description: "The most useful thing an AI consultant can tell you isn't what to automate. It's what not to. Here's the framework for making that call."
-tags: [strategy, ai-thinking]
+tags: [strategy, automation, ai-thinking]
 image: ""
 ---
 

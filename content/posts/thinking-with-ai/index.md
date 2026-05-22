@@ -3,7 +3,7 @@ title: "How I Think with AI: The Obsidian + Claude System"
 date: 2026-05-20
 draft: false
 description: "What does it actually look like to build an AI-augmented thinking and planning system? Here's the setup I use every day — and how it could work for a business."
-tags: [tools, custom-workflows]
+tags: [workflows, tools, obsidian]
 image: ""
 ---
 

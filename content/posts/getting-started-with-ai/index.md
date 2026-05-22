@@ -3,7 +3,7 @@ title: "What 'Getting Started with AI' Actually Looks Like"
 date: 2026-05-22
 draft: false
 description: "Most organizations know they need to move on AI. What they don't know is what the first step actually looks like. Here's the process."
-tags: [getting-started, consulting]
+tags: [getting-started, consulting, ai-deployment]
 image: ""
 ---
 

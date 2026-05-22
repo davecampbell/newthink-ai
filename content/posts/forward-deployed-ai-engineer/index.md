@@ -3,7 +3,7 @@ title: "What a Forward Deployed AI Engineer Does"
 date: 2026-05-18
 draft: false
 description: "A new kind of role is emerging at AI companies and the firms that deploy AI for clients. Understanding it explains why most AI projects fail — and what the successful ones have in common."
-tags: [consulting, ai-strategy]
+tags: [strategy, consulting, fde]
 image: ""
 ---
 

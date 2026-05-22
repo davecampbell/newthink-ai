@@ -3,7 +3,7 @@ title: "What NanoClaw Does for a Business"
 date: 2026-05-19
 draft: false
 description: "A dedicated AI agent that runs continuously in your operation, handles a specific high-volume workflow, and works with your actual data. Here's what that looks like."
-tags: [nanoclaw, ai-agents]
+tags: [nanoclaw, ai-agents, ai-deployment]
 image: ""
 ---
 
