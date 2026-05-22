@@ -8,11 +8,11 @@ theme = "hugo-theme-stack"
 
 [params]
   mainSections = ["posts"]
-  description = "Real-world AI use cases across everyday and professional problems."
-  scheduleUrl = "#"  # Replace with your Calendly or scheduling link
+  description = "NewThink.ai — Louisville-area applied AI firm. We help organizations move from AI awareness to deployed, working systems."
+  scheduleUrl = "https://timetuna.com/new-think"
 
   [params.sidebar]
-    subtitle = "AI for everything. Think differently."
+    subtitle = "Applied AI for Louisville-area business."
     compact = false
 
   [params.article]
@@ -26,6 +26,38 @@ theme = "hugo-theme-stack"
   [params.defaultImage.opengraph]
     enabled = false
 
+  [params.hero]
+    headline = "Every business has access to AI.<br>Not every business knows how to use it."
+    subheadline = "NewThink.ai helps Louisville-area organizations move from AI awareness to deployed, working systems — built inside your operation, around your actual workflows."
+
+  [params.what]
+    body = "Most organizations have seen the demos. They've experimented with the tools and know AI matters. What they're missing is the path from 'this is interesting' to 'this is working.' NewThink.ai is a Louisville-area applied AI firm. We sit with your teams, map your workflows, and deploy solutions built around your specific data and context. Not a report. Not a vendor recommendation. Working AI — in your operation."
+
+  [params.schedule]
+    headline = "Ready to move past the demo?"
+    subheadline = "Tell us what you're trying to accomplish. A 30-minute conversation is usually enough to figure out the right first step — and whether we're the right fit."
+    buttonText = "Schedule a Free Call"
+
+[[params.usecases]]
+  icon = "🚀"
+  title = "Getting Started"
+  description = "From ground zero to a working AI prototype. We audit your operation, find the highest-value first use case, and build something real."
+
+[[params.usecases]]
+  icon = "⚙️"
+  title = "Custom AI Workflows"
+  description = "AI-augmented work systems built around how your team actually operates — connecting Claude, your data, and your existing tools."
+
+[[params.usecases]]
+  icon = "💼"
+  title = "Claude for Small Business"
+  description = "Your team running with Anthropic's Claude for Business — configured, trained, and genuinely adopted, not just licensed."
+
+[[params.usecases]]
+  icon = "🤖"
+  title = "NanoClaw for Business"
+  description = "A dedicated AI agent deployed into your operation for a specific, high-volume workflow. Built and operated by NewThink.ai."
+
 [menu]
   [[menu.main]]
     name = "Articles"
@@ -35,6 +67,10 @@ theme = "hugo-theme-stack"
     name = "Topics"
     url = "/topics"
     weight = 15
+  [[menu.main]]
+    name = "Services"
+    url = "/services"
+    weight = 18
   [[menu.main]]
     name = "About"
     url = "/about"
