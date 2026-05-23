@@ -27,8 +27,16 @@ theme = "hugo-theme-stack"
     enabled = false
 
   [params.hero]
-    headline = "Every business has access to AI.<br>Not every business knows how to use it."
     subheadline = "NewThink.ai helps Louisville-area organizations move from AI awareness to deployed, working systems — built inside your operation, around your actual workflows."
+
+[[params.heroLines]]
+  text = "Every business has access to AI."
+
+[[params.heroLines]]
+  text = "Not every business knows how to use it."
+
+[[params.heroLines]]
+  text = "Be one that does."
 
   [params.what]
     body = "Most organizations have seen the demos. They've experimented with the tools and know AI matters. What they're missing is the path from 'this is interesting' to 'this is working.' NewThink.ai is a Louisville-area applied AI firm. We sit with your teams, map your workflows, and deploy solutions built around your specific data and context. Not a report. Not a vendor recommendation. Working AI — in your operation."

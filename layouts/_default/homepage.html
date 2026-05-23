@@ -14,7 +14,7 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <h1>{{ .Site.Params.hero.headline | default "AI for everything.<br>Think differently." | safeHTML }}</h1>
+        <h1 id="hero-headline">{{ with index .Site.Params.heroLines 0 }}{{ .text }}{{ else }}Every business has access to AI.{{ end }}</h1>
         <p class="hero-sub">{{ .Site.Params.hero.subheadline | default "Real-world AI use cases across everyday and professional problems — from the practical to the surprising." }}</p>
         <div class="hero-actions">
             <a href="/posts/" class="btn btn-primary">Read Articles</a>
@@ -99,6 +99,30 @@
 
 <!-- FOOTER -->
 {{ partial "site-footer.html" . }}
+
+{{ with .Site.Params.heroLines }}
+<script>
+(function() {
+    var el = document.getElementById('hero-headline');
+    if (!el) return;
+    var lines = [{{ range . }}"{{ .text }}",{{ end }}];
+    if (lines.length < 2) return;
+    var idx = 0;
+    var fade = 700;
+    var hold = 3200;
+    function next() {
+        el.style.opacity = '0';
+        setTimeout(function() {
+            idx = (idx + 1) % lines.length;
+            el.textContent = lines[idx];
+            el.style.opacity = '1';
+        }, fade);
+        setTimeout(next, hold + fade);
+    }
+    setTimeout(next, hold);
+})();
+</script>
+{{ end }}
 
 </body>
 </html>
