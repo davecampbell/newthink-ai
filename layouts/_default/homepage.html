@@ -29,7 +29,7 @@
         <div class="what-inner">
             <div class="what-text">
                 <h2>What is New Think?</h2>
-                <p>{{ .Site.Params.what.body | default "New Think is a consulting and ideas brand built around one belief: AI can solve almost anything — if you approach the problem differently. We document real cases across business, health, creativity, research, and daily life to show what's actually possible right now." }}</p>
+                <div class="what-body">{{ .Site.Params.what.body | markdownify }}</div>
             </div>
             <div class="what-stat">
                 <div class="stat-box">

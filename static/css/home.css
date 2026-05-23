@@ -204,6 +204,25 @@ a { color: inherit; text-decoration: none; }
     color: var(--text-muted);
     font-size: 1.05rem;
     max-width: 560px;
+    margin-bottom: 1rem;
+}
+
+.what-body ul {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 560px;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.what-body li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+}
+
+.what-body strong {
+    color: var(--text);
+    font-weight: 600;
 }
 
 .stat-box {
