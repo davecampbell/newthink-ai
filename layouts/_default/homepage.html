@@ -107,6 +107,17 @@
     if (!el) return;
     var lines = [{{ range . }}"{{ .text }}",{{ end }}];
     if (lines.length < 2) return;
+
+    // Measure each line and lock height to the tallest — prevents layout shift
+    var saved = el.textContent;
+    var maxH = 0;
+    lines.forEach(function(line) {
+        el.textContent = line;
+        maxH = Math.max(maxH, el.offsetHeight);
+    });
+    el.textContent = saved;
+    el.style.minHeight = maxH + 'px';
+
     var idx = 0;
     var fade = 700;
     var hold = 3200;
