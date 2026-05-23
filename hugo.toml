@@ -39,7 +39,19 @@ theme = "hugo-theme-stack"
   text = "Be one that does."
 
   [params.what]
-    body = "Most organizations have seen the demos. They've experimented with the tools and know AI matters. What they're missing is the path from 'this is interesting' to 'this is working.' NewThink.ai is a Louisville-area applied AI firm. We sit with your teams, map your workflows, and deploy solutions built around your specific data and context. Not a report. Not a vendor recommendation. Working AI — in your operation."
+    body = '''
+Most organizations have lots of casual exposure to AI — played with some tools, seen some demos. They have seen results and know AI matters. What they're missing is the path from 'this is interesting' to 'this could work on our problem' to 'this is working and we're getting results.'
+
+NewThink.ai is a Louisville-area applied AI firm.
+
+- We'll sit with your stakeholders, your teams, or just selected individuals, and work through your workflows to map out what makes sense to automate. **(Audit)**
+- We'll then dive into the data and the systems to hammer out the details of a working prototype — passing live data through curated setups. **(Evaluation)**
+- After review, we'll deploy and monitor the custom solution. **(Deploy)**
+
+A standardized working implementation — not a report, demo, or recommendation.
+
+**Your organization is no longer on the AI sidelines — you're in the game.**
+'''
 
   [params.schedule]
     headline = "Ready to move past the demo?"
